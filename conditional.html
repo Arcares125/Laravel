@@ -60,18 +60,22 @@
         var role = document.getElementById("role").value 
         var pilih="";      
         // buatlah kondisional berdasarkan dua variabel di atas yaitu name dan role, ketentuannya dapat dibaca di atas
+
         if(name == "" && role == ""){
             pilih+= "Nama Harus Diisi!"
-        } else if (name == "Mikael" || name == "mikael" && role == ""){
-            pilih += "Halo Mikael, Pilih peranmu untuk memulai game!"
-        } else if(name == "Nina" || name == "nina" && role == "Penyihir" || role == "penyihir"){
-            pilih+="Selamat datang di Dunia Werewolf, Nina"+"<br>"+"Halo Penyihir Nina, kamu dapat melihat siapa yang menjadi Werewolf!"
-        } else if(name == "Danu" || name == "danu" && role == "Werewolf" || role == "werewolf"){
-            pilih+="Selamat datang di Dunia Werewolf, Danu"+"<br>"+"Halo Werewolf Danu, kamu dapat memilih siapa untuk dimakan malam ini!"
-        } else if(name == "Zero" || name == "zero" && role == "Rakjel" || role == "rakjel"){
-            pilih+="Selamat datang di Dunia Werewolf, Zero"+"<br>"+"Halo Rakjel Zero, Kamu menjadi rakyat jelata "
+        } else if(name != "" && role == ""){
+            pilih+="Halo "+name+", Pilih peranmu untuk memulai game!"
+        } else if(name == "" && role != ""){
+            pilih+="Input namamu!"
+        } else if(name != "" && role == "Penyihir" || role == "penyihir"){
+            pilih+="Selamat datang di Dunia Werewolf, "+name+"<br>"+"Halo Penyihir "+name+", kamu dapat melihat siapa yang menjadi Werewolf"
+        } else if(name != "" && role == "Werewolf" || role == "werewolf"){
+            pilih+="Selamat datang di Dunia Werewolf, "+name+"<br>"+"Halo Werewolf "+name+", kamu dapat Memilih siapa yang dimakan malam ini!"
+        } else if(name != "" && role == "Rakjel" || role == "rakjel"){
+            pilih+="Selamat datang di Dunia Werewolf, "+name+"<br>"+"Halo Rakjel "+name+", Kamu menjadi rakyat jelata"
+        } else if (role != "Penyihir" || role != "penyihir" || role != "Werewolf" || role != "werewolf" || role != "Rakjel" || role != "rakjel"){
+            pilih+="Role hanya tersedia Penyihir || Werewolf || Rakjel"
         }
-
 
         var jawabanKonsol=pilih // = jawaban dari kondisional di-assign di sini
         // Code Sampai sini
